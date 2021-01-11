@@ -1,4 +1,4 @@
-exports.array1 = [
+const array1 = [
   '201 W Washington Blvd, Los Angeles, CA 90007, United States',
   '4011 S Central Ave, Los Angeles, CA 90011, United States',
   '2810 S Figueroa St, Los Angeles, CA 90007, United States',
@@ -40,7 +40,7 @@ exports.array1 = [
   `Ia Kargareteli Street, Tbilisi`,
 ];
 
-exports.array2 = [
+const array2 = [
   '946 8th Ave, New York, NY 10019, United States',
   '1651 Broadway, New York, NY 10019, United States',
   '18 E 42nd St, New York, NY 10017, United States',
@@ -76,10 +76,9 @@ exports.array2 = [
   '1414 University Ave, San Diego, CA 92103, United States',
 ];
 
-exports.array3 = [
+const array3 = [
   '2345 El Cajon Blvd, San Diego, CA 92104, United States',
   '3879 Fairmount Ave, San Diego, CA 92105, United States',
-  '1515 Euclid Ave, San Diego, CA 92105, United States',
   '5824 Montezuma Rd, San Diego, CA 92115, United States',
   '6326 Mission Gorge Rd, San Diego, CA 92120, United States',
   '1121 Garnet Ave, San Diego, CA 92109, United States',
@@ -111,8 +110,35 @@ exports.array3 = [
   '690 Alameda St, Los Angeles, CA 90021, United States',
   '1310 E Olympic Blvd, Los Angeles, CA 90021, United States',
 ];
-const { array1, array2, array3 } = module.exports;
-console.log(array1.length, array2.length, array3.length);
+
+// const checkArrays = [array1, array2, array3]
+function removeDuplicates(checkArray = []) {
+  const track = {};
+  const duplicates = [];
+  checkArray.forEach((arr, j) => {
+    arr.forEach((address, i) => {
+      if (track[address]) {
+        const dup = arr.splice(i, 1);
+        duplicates.push(dup);
+        console.log(`${dup} removed from array${j} at index ${i}`);
+      } else {
+        track[address] = true;
+      }
+    });
+  });
+  if (!duplicates.length) {
+    console.log('No removals');
+  }
+  return true;
+}
+
+removeDuplicates([array1, array2, array3]);
+
+exports.removeDuplicates = removeDuplicates;
+exports.array1 = array1;
+exports.array2 = array2;
+exports.array3 = array3;
+
 //1-10 nyc
 //11-25 sf
 //26-41 sd
@@ -123,7 +149,8 @@ console.log(array1.length, array2.length, array3.length);
 //89-97 sydney
 //98+ tbilisi, georgia
 
-/* extra addresses tbilisi
+/* 
+  extra addresses tbilisi
   // `118 Davit Aghmashenebeli Ave, Tbilisi 0101`,
   // `38/6 Egnate Ninoshvili St, Tbilisi 0112`,
   // `13 Queen Tamar Ave, Tbilisi`,
