@@ -66,4 +66,27 @@ const seed = async () => {
 
 seed();
 
+/*  ***** EXAMPLE OUTPUT *****
+{"formattedAddress":"946 8th Ave, New York, NY 10019, USA","latitude":40.7658203,
+"longitude":-73.98318130000001,
+"extra":{
+  "googlePlaceId":"ChIJjzCjCVhYwokRqhhsCHVybc4",
+  "confidence":1,"premise":null,
+  "subpremise":null,
+  "neighborhood":"Manhattan",
+  "establishment":null},
+"administrativeLevels":{
+  "level2long":"New York County",
+  "level2short":"New York County",
+  "level1long":"New York",
+  "level1short":"NY"},
+"streetNumber":"946",
+"streetName":"8th Avenue",
+"city":"New York",
+"country":"United States",
+"countryCode":"US",
+"zipcode":"10019",
+"provider":"google"}
+*/
+
 

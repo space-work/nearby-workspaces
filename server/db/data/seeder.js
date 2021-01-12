@@ -14,7 +14,9 @@ const addresses = [...data1, ...data2, ...data3];
 const prepLocations = addresses.map((geojson, i) => {
   const { 
     streetName, streetNumber, city, formattedAddress, countryCode,
-    extra: { neighborhood }, latitude, longitude, state, country, zipcode } = geojson;
+    extra: { neighborhood }, latitude, longitude, country, zipcode,
+    administrativeLevels: { level1short }
+  } = geojson;
   return {
     workspaceSlug: `workspace-${i}`,
     workspaceId: i,
@@ -24,7 +26,7 @@ const prepLocations = addresses.map((geojson, i) => {
     streetName, 
     streetNumber,
     city,
-    state,
+    state: level1short,
     country,
     countryCode,
     zipcode,
