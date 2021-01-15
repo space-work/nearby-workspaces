@@ -8,7 +8,9 @@ const { getAddress, getNearbyBuildings, notFound, errorHandler} = require('./con
 
 app.use(morgan('dev'));
 
-app.use('/', express.static(path.join(__dirname, '../', 'public')));
+app.use('/', express.static(path.join(__dirname, '../', 'client', 'dist')));
+
+app.use('/bundle.js', express.static(path.join(__dirname, '../', 'client', 'dist', 'bundles.js')));
 
 app.get('/nearbyworkspaces-api/buildings/:workspaceId', getNearbyBuildings);
 
