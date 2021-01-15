@@ -13,7 +13,11 @@ const App = () => {
     getIdFromParam();
     const locations = await getWorkspaces();
     if (mnt) {
-      setLocs(locations);
+      if (locations === false) {
+        console.log('error');
+      } else {
+        setLocs(locations);
+      }      
     }
     return () => mnt = false;
   }, []);
