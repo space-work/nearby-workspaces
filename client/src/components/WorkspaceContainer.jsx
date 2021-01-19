@@ -7,7 +7,7 @@ export default ({ locations }) => {
   }
   return (
     <div>
-      { locations.map(location => <Workspace location={ location } />)}
+      { locations.filter(loc => loc.workspaceId < 100).map(location => <Workspace location={ location } />)}
     </div>
   );
 };

@@ -1,8 +1,7 @@
 export default () => {
-
   return (
     <div>
-    <h2>Nearby Workspaces</h2>
-  </div>
+      <h3 className="nb-section-title">Nearby Workspaces</h3>
+    </div>
   )
 };

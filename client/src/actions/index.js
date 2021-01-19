@@ -1,3 +1,4 @@
+import { amenitiesService, photoService, descriptionService} from '../data/data.js';
 const nearbyAPI = 'http://localhost:5001/nearbyworkspaces-api';
 const amenitiesAPI = '';
 const descriptionAPI = '';
@@ -20,22 +21,34 @@ export const getWorkspaces = () => {
   .catch(error => console.log(error));
 };
 
-const getWorkspace = (id) => {
-
+const getDescription = (id) => {
+  return new Promise(async (resolve, reject) => {
+    const description = {};
+    description.data = descriptionService.filter(desc => desc.workspaceId === id)[0];
+    resolve(description);
+  });
 };
 
 const getPhoto = (id) => {
-
+  return new Promise( async (resolve, reject) => {
+    const photo = {};
+    photo.data = photoService.filter(pic => pic.workspaceId === id)[0];
+    resolve(photo);
+  });
 };
 
-const getAmenities = (id) => {
-
+const getAmenities = async (id) => {
+  return new Promise( async (resolve, reject) => {
+    const amenities = {};
+    amenities.data = amenitiesService.filter(am => am.workspaceId === id)[0];
+    resolve(amenities);
+  });
 };
 
 export const getWorkspaceInfo = (id) => {
   return new Promise( async (resolve, reject) => {
     try {
-      const description = await getWorkspace(id);
+      const description = await getDescription(id);
       const photo = await getPhoto(id);
       const amenities = await getAmenities(id);
       const info = {

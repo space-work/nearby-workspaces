@@ -1,6 +1,6 @@
 const { useState, useEffect } = React;
-import { getWorkspaces, getIdFromParam } from './actions/'
-//components
+import './index.css';
+import { getWorkspaces } from './actions/'
 import Title from './components/Title.jsx';
 import WorkspaceContainer from './components/WorkspaceContainer.jsx';
 
@@ -10,7 +10,6 @@ const App = () => {
   // get workspaces and set to state
   useEffect( async () => {
     let mnt = true;
-    getIdFromParam();
     const locations = await getWorkspaces();
     if (mnt) {
       if (locations === false) {
