@@ -124,3 +124,8 @@ p {
   margin: 0px !important;
 }
 
+a:hover {
+  text-decoration: none;
+  color:rgb(137, 137, 137);
+}
+

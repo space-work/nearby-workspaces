@@ -26,7 +26,7 @@ export default ({ location: { workspaceId, neighborhood } } ) => {
   else {
     return (
       <div className="nb-container">
-        <a href={`http://localhost:5001/buildings/${workspaceId}`}>
+        <a href={`http://localhost:5001/buildings/${workspaceId}`} className="light-text">
           <div className="nb-grid">
             <div className="nb-photo-container" style={{background: `url(${photo})`}}>
             </div>
