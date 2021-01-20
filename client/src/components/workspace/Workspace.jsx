@@ -39,7 +39,7 @@ export default ({ location: { workspaceId, neighborhood } } ) => {
                 <ul className="nb-amenities-list">
                   <li>{ amenities[0] }{' '}</li>
                   { amenities.slice(1).map(am => (
-                  <li>&#8226; { am } </li> )
+                  <li key={`${description.name}-${am}`}>&#8226; { am } </li> )
                   )}
                 </ul>
               </div>

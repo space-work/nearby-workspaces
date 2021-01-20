@@ -7,7 +7,7 @@ export default ({ locations }) => {
   }
   return (
     <div>
-      { locations.filter(loc => loc.workspaceId < 100).map(location => <Workspace location={ location } />)}
+      { locations.filter(loc => loc.workspaceId < 100).map(location => <Workspace key={location.workspaceId} location={ location } />)}
     </div>
   );
 };

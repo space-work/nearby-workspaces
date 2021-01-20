@@ -12,7 +12,6 @@ export const getWorkspaces = () => {
     }
     try {
       const { data: { nearbyWorkspaces }} = await axios.get(`${nearbyAPI}/buildings/${id}`);
-      console.log(nearbyWorkspaces);
       resolve(nearbyWorkspaces);
     } catch (error) {
       reject(error);
