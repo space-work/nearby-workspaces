@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ReactDom from 'react-dom';
+import ReactDOM from 'react-dom';
 import './index.css';
 import { getWorkspaces } from './actions/'
 import Title from './components/Title.jsx';
@@ -11,7 +11,7 @@ const App = () => {
   // get workspaces and set to state
   useEffect( async () => {
     let mnt = true;
-    const locations = await getWorkspaces();
+    const locations = await getWorkspaces(window.location.pathname);
     if (mnt) {
       if (locations === false) {
         console.log('error');
