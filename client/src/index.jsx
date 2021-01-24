@@ -1,4 +1,4 @@
-const { useState, useEffect } = React;
+import React, { useEffect, useState } from 'react';
 import './index.css';
 import { getWorkspaces } from './actions/'
 import Title from './components/Title.jsx';
