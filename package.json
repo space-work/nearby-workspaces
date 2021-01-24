@@ -12,7 +12,8 @@
     "dev-build": "webpack --watch",
     "build": "webpack",
     "seed": "node server/db/data/seeder.js",
-    "test-server": "jest server/spec"
+    "test-server": "jest server/spec",
+    "test-client": "jest client/spec"
   },
   "dependencies": {
     "@babel/core": "^7.12.10",
@@ -21,6 +22,7 @@
     "@babel/preset-react": "^7.12.10",
     "axios": "^0.21.1",
     "babel-loader": "^8.2.2",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.11.11",
