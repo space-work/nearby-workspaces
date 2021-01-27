@@ -1,8 +1,9 @@
 import { amenitiesService, photoService, descriptionService} from '../data/data.js';
 import axios from 'axios';
-const nearbyAPI = 'http://localhost:5001/nearbyworkspaces-api';
+const nearbyAPI = 'http://localhost:5001/api/nearbyworkspaces-api';
 const amenitiesAPI = '';
-const descriptionAPI = '';
+const descriptionAPI = 'http://localhost:6060/api/workspace-description';
+const ratesAPI = 'http://localhost:4000/workspace-api/workspace';
 const photoAPI = '';
 
 export const getWorkspaces = (url) => {
@@ -22,11 +23,7 @@ export const getWorkspaces = (url) => {
 };
 
 export const getDescription = (id) => {
-  return new Promise(async (resolve, reject) => {
-    const description = {};
-    description.data = descriptionService.filter(desc => desc.workspaceId === id)[0];
-    resolve(description);
-  });
+  return axios.get(`${descriptionAPI}/${id}`);
 };
 
 export const getPhoto = (id) => {
@@ -45,21 +42,27 @@ export const getAmenities = async (id) => {
   });
 };
 
+export const getRates = (id) => {
+  return axios.get(`${ratesAPI}/${id}`);
+}
+
 export const getWorkspaceInfo = (id) => {
   return new Promise( async (resolve, reject) => {
     try {
       const description = await getDescription(id);
       const photo = await getPhoto(id);
       const amenities = await getAmenities(id);
+      const rates = await getRates(id);
       const info = {
         description: description.data,
         photo: photo.data,
-        amenities: amenities.data
+        amenities: amenities.data,
+        rates: rates.data[0]
       };
       resolve(info);
     } catch (error) {
       reject(error);
     }
   })
-    .catch(err => console.log(err));
+    .catch(err => err);
 };
