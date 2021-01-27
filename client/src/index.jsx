@@ -5,7 +5,7 @@ import { getWorkspaces } from './actions/'
 import Title from './components/Title.jsx';
 import WorkspaceContainer from './components/WorkspaceContainer.jsx';
 
-const App = () => {
+const NearbyWorkspaces = () => {
   const [locs, setLocs] = useState(null);
 
   // get workspaces and set to state
@@ -30,4 +30,4 @@ const App = () => {
   );
 };
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<NearbyWorkspaces />, document.getElementById('nearby-workspaces'));
