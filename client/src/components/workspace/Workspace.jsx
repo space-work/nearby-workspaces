@@ -2,24 +2,28 @@ import React, { useEffect, useState } from 'react';
 import LoadingWorkspace from './LoadingWorkspace.jsx';
 import { getWorkspaceInfo } from '../../actions/';
 
-export default ({ location: { workspaceId, neighborhood } } ) => {
-  const [space, setSpace] = useState(null);
-
-  useEffect(async () => {
-    let mnt = true;
-    if (mnt) {
-      const info = await getWorkspaceInfo(workspaceId);
-      setSpace(info);
-    }
-    return () => mnt = false;
-  },[]);
+export default ({ location: { workspaceId, neighborhood }, details = null } ) => {
+  const [space, setSpace] = useState(details);
+  if (space === null) {
+    getWorkspaceInfo(workspaceId)
+      .then(res => setSpace(res))
+      .catch(err => {
+        setSpace(false);
+        console.log(err.message);
+      })
+  }
 
   if (space === null) {
     return (
       <LoadingWorkspace />
     )
   }
-  const { amenities: { amenities }, photo: { photo }, description } = space;
+
+  if (space === false) {
+    return <div></div>
+  }
+
+  const { amenities: { amenities }, photo: { photo }, description, rates: { membership_rate } } = space;
 
   if (!amenities || !photo || !description ) return <div></div>
 
@@ -50,8 +54,8 @@ export default ({ location: { workspaceId, neighborhood } } ) => {
               <p>Available workspace</p>
             </div>
             <div className="nb-pricing-price pad-10">
-              { description.price ? (
-                  <p>from <span className="bolder-text">${ description.price }/mo</span></p>
+              { membership_rate ? (
+                  <p>from <span className="bolder-text">${ membership_rate }/mo</span></p>
                 ) : <p>View Inventory</p>
               }
             </div>
