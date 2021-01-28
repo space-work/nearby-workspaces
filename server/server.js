@@ -14,9 +14,9 @@ app.use('/', express.static(path.join(__dirname, '../', 'client', 'dist')));
 
 app.use('/buildings/:workspaceId', express.static(path.join(__dirname, '../', 'client', 'dist')));
 
-app.get('/api/nearbyworkspaces-api/buildings/:workspaceId', getNearbyBuildings);
+app.get('/api/nearbyworkspaces/buildings/:workspaceId', getNearbyBuildings);
 
-app.get('/api/nearbyworkspaces-api/address/:workspaceId', getAddress);
+app.get('/api/nearbyworkspaces/address/:workspaceId', getAddress);
 
 app.use('*', notFound);
 
