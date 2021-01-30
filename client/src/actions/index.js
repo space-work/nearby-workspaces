@@ -82,7 +82,7 @@ export const getWorkspaceInfo = (id) => {
       info.amenities = amenities ? amenities.data : {};
 
       const rates = await getRates(id);
-      info.rates = rates ? rates.data : {};
+      info.rates = rates ? rates.data[0] : {};
 
       resolve(info);
     } catch (error) {
