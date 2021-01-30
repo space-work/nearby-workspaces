@@ -27,7 +27,7 @@ export default ({ location: { workspaceId, neighborhood }, details = null } ) =>
   }
 
   const { amenities, photo, description, rates } = space;
-
+  console.log(rates);
   // conditionally render array of amenities data
   const Amenities = () => amenities.amenities ? (
       <>
@@ -63,7 +63,7 @@ export default ({ location: { workspaceId, neighborhood }, details = null } ) =>
           </div>
           <div className="nb-pricing-price pad-10">
             { rates.membership_rate ? (
-                <p>from <span className="bolder-text">${ membership_rate }/mo</span></p>
+                <p>from <span className="bolder-text">${ rates.membership_rate }/mo</span></p>
               ) : <p>View Inventory</p>
             }
           </div>
