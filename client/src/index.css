@@ -23,7 +23,7 @@
 }
 
 .nb-grid {
-  height: 174px;
+  height: 160px;
   width: 100%;
   display: grid;
   grid-template-columns: 40% 60%;
@@ -46,6 +46,7 @@
 }
 
 .nb-description-title {
+  color: #000;
   font-size: 1.25rem;
   line-height: 2rem;
   margin-bottom: 0px;
@@ -70,7 +71,7 @@
 
 .nb-amenities-list {
   padding: 0;
-  margin: 0;
+  margin-top: 16px;
   list-style: none;
 }
 
@@ -126,7 +127,7 @@
 }
 
 .dark-text {
-  color: rgb(76, 76, 76);
+  color: #000;
 }
 
 .small-text {
