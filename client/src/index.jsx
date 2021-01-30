@@ -22,8 +22,14 @@ const NearbyWorkspaces = () => {
     return () => mnt = false;
   }, []);
 
-  if (locs === false) {
-    return <div></div>
+
+
+  if (locs === false || locs === null) {
+    return <></>
+  }
+
+  if (locs.length === 0) {
+    return <></>
   }
 
   return (
