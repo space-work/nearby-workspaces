@@ -1,11 +1,25 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+}
+
 .nb-container {
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
   border: 1px solid #ddd;
   display: block;
   border-radius: 3px;
   overflow: hidden;
   padding: 0px;
   margin-bottom: 15px;
+}
+
+.nb-container > a:hover {
+  text-decoration: none;
+  color:rgb(137, 137, 137);
+}
+
+.nb-container > a {
+  text-decoration: none;
 }
 
 .nb-grid {
@@ -24,6 +38,7 @@
 }
 
 .nb-section-title {
+  font-family: 'Roboto', sans-serif;
   font-size: 2rem;
   font-weight: 600;
   line-height: 2.75rem;
@@ -63,8 +78,6 @@
   margin: 0;
   display: inline;
 }
-
-
 
   /* MEDIA QUERIES */
 
@@ -120,12 +133,7 @@
   font-size: .9em;
 }
 
-p {
-  margin: 0px !important;
-}
 
-a:hover {
-  text-decoration: none;
-  color:rgb(137, 137, 137);
-}
+
+
 
