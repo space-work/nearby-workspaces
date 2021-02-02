@@ -4,7 +4,7 @@ const nearbyAPI = 'http://localhost:5001/api/nearbyworkspaces';
 const amenitiesAPI = '';
 const descriptionAPI = 'http://localhost:6060/api/workspace-description';
 const ratesAPI = 'http://localhost:4000/workspace-api/workspace';
-const photoAPI = '';
+const photoAPI = 'http://localhost:6001/api/photos';
 
 // get list of workspaces near given id
 export const getWorkspaces = (url) => {
@@ -43,11 +43,13 @@ export const getDescription = async (id) => {
 };
 
 export const getPhoto = (id) => {
-  return new Promise( async (resolve, reject) => {
-    const photo = {};
-    photo.data = photoService.filter(pic => pic.workspaceId === id)[0];
-    resolve(photo);
-  });
+  // return new Promise( async (resolve, reject) => {
+  //   console.log(api);
+  //   const photo = {};
+  //   photo.data = photoService.filter(pic => pic.workspaceId === id)[0];
+  //   resolve(photo);
+  // });
+  return axios.get(`${photoAPI}/${id}`);
 };
 
 export const getAmenities = async (id) => {

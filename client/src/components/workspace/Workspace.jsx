@@ -43,7 +43,7 @@ export default ({ location: { workspaceId, neighborhood }, details = null } ) =>
     <div className="nb-container">
       <a href={`/buildings/${ workspaceId }`} className="light-text">
         <div className="nb-grid">
-          <div className="nb-photo-container" style={{background: `url(${photo.photo})`}}>
+          <div className="nb-photo-container" style={{background: `url(${photo.url})`}}>
           </div>
           <div className="nb-description-container">
             <div>
