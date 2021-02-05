@@ -14,7 +14,7 @@ const { data, locations } = require('./data');
 describe('WorkspaceContainer', () => {
 
   it('should render an empty div when locations prop is null', () => {
-    const wrapper = mount(<WorkspaceContainer locations={null} />);
+    const wrapper = mount(<WorkspaceContainer locations={false} />);
     expect(wrapper.find('div').children().length).toEqual(0);
   });
 
