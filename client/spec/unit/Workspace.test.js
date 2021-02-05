@@ -5,7 +5,7 @@ require('@babel/preset-react');
 const React = require('react');
 const enzyme = require('enzyme');
 const Adapter = require('@wojtekmaj/enzyme-adapter-react-17');
-const Workspace = require('../../src/components/Workspace.jsx').default;
+const Workspace = require('../../src/components/workspace/Workspace.jsx').default;
 
 enzyme.configure({ adapter: new Adapter() });
 const { shallow, mount } = enzyme;

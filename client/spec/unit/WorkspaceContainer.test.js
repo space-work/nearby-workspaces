@@ -9,7 +9,7 @@ const WorkspaceContainer = require('../../src/components/WorkspaceContainer.jsx'
 
 enzyme.configure({ adapter: new Adapter() });
 const { shallow, mount } = enzyme;
-const { data, noData, locations } = require('./data');
+const { data, locations } = require('./data');
 
 describe('WorkspaceContainer', () => {
 
@@ -19,9 +19,9 @@ describe('WorkspaceContainer', () => {
   });
 
   it('should render a div for each location passed in', () => {
-    const wrapper = mount(<WorkspaceContainer locations={locations} />);
-    expect(wrapper.children().length).toEqual(3);
-    expect(wrapper.find('.nb-container').length).toEqual(2);
+    const wrapper = mount(<WorkspaceContainer locations={locations} details={data}/>);
+    expect(wrapper.find('.nb-section-title').length).toEqual(1);    
+    expect(wrapper.find('.nb-container').length).toEqual(3);
   })
 
 })
