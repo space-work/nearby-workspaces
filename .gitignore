@@ -28,3 +28,4 @@ Gruntfile.js
 build/
 client/dist/nearby.js
 client/dist/nearby.js.LICENSE.txt
+client/dist/nearby.js.gz
