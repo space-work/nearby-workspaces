@@ -1,5 +1,4 @@
 import { amenitiesService, photoService, descriptionService} from '../data/data.js';
-import axios from 'axios';
 axios.defaults.timeout = 3000;
 const nearbyAPI = '/api/nearbyworkspaces';
 const amenitiesAPI = '/amenities-api/amenity';
