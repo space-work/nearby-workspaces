@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "nodemon server/server.js",
     "dev-build": "webpack --watch",
+    "setup": "npm install && npm run seed && npm run build",
     "build": "webpack",
     "seed": "node server/db/data/seeder.js",
     "test-server": "jest server/spec",
