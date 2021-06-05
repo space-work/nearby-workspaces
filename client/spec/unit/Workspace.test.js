@@ -1,4 +1,4 @@
-require('babel-jest');
+require('@babel/core');
 require('@babel/polyfill');
 require('@babel/preset-env');
 require('@babel/preset-react');

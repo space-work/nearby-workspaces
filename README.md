@@ -1,5 +1,4 @@
 # Nearby Buildings Service
-
 > This service stores addresses and latlong coordinates for mock data. It provides address information and promity search within the viscinity of a given workspace.
 
 ## Related Projects
@@ -18,12 +17,8 @@
 1. [Requirements](#requirements)
 1. [Development](#development)
 
-## Usage
-
-> 
 
 ## Requirements
-
 An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 - Node 6.13.0
@@ -44,11 +39,14 @@ node seeder.js -d
 ```
 
 ### Installing Dependencies
-
 From within the root directory:
 
 ```sh
 npm install -g webpack
 npm install
 ```
+
+### Run
+After generating mock data
+
 
